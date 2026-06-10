@@ -36,10 +36,10 @@ function Navbar({ userEmail, onShowAuth, onLogout, onShowProfile }) {
           background: `linear-gradient(135deg, ${theme.accentPurple}, ${theme.accent})`,
           display: "flex", alignItems: "center", justifyContent: "center",
           fontSize: "18px", boxShadow: `0 0 20px rgba(123,47,255,0.5)`,
-        }}>🧠</div>
+        }}>CI</div>
         <div>
           <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "16px", letterSpacing: "-0.3px" }}>CV Intelligence</div>
-          <div style={{ fontSize: "10px", color: theme.textDim, letterSpacing: "1px", textTransform: "uppercase" }}>Powered by Groq + Adzuna</div>
+          <div style={{ fontSize: "10px", color: theme.textDim, letterSpacing: "1px", textTransform: "uppercase" }}></div>
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
