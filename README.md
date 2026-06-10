@@ -175,86 +175,7 @@ cv-intelligence/
 - Supabase account
 - Groq API key (free at console.groq.com)
 - Adzuna API credentials (free at developer.adzuna.com)
-
-### Backend Setup
-
-```bash
-cd backend
-pip install -r requirements.txt
-```
-
-Create a `.env` file in the `backend/` folder:
-
-```env
-GROQ_API_KEY=your_groq_api_key
-ADZUNA_APP_ID=your_adzuna_app_id
-ADZUNA_APP_KEY=your_adzuna_app_key
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_KEY=your_supabase_service_role_key
-```
-
-Run the schema in your Supabase SQL editor (`backend/schema.sql`), then start the server:
-
-```bash
-python -m uvicorn main:app --reload
-```
-
-Backend runs at `http://localhost:8000` · API docs at `http://localhost:8000/docs`
-
-### Frontend Setup
-
-```bash
-cd frontend
-npm install
-```
-
-Create a `.env` file in the `frontend/` folder:
-
-```env
-VITE_API_URL=http://localhost:8000/api
-```
-
-Start the dev server:
-
-```bash
-npm run dev
-```
-
-Frontend runs at `http://localhost:5173`
-
----
-
-## API Endpoints
-
-| Method | Endpoint | Description | Auth |
-|---|---|---|---|
-| POST | `/api/auth/signup` | Register new user | — |
-| POST | `/api/auth/login` | Sign in | — |
-| GET | `/api/auth/me` | Get current user | ✓ |
-| POST | `/api/auth/forgot-password` | Send reset email | — |
-| POST | `/api/cv/analyze` | Full CV analysis pipeline | Optional |
-| GET | `/api/cv/history` | Past CV analyses | ✓ |
-| POST | `/api/cv/cover-letter` | Generate cover letter | Optional |
-| POST | `/api/cv/tailor` | Tailor CV for role + market | Optional |
-| POST | `/api/jobs/match` | Match jobs to CV profile | Optional |
-| POST | `/api/jobs/save` | Save a job | ✓ |
-| GET | `/api/jobs/saved` | Get saved jobs | ✓ |
-
----
-
-## Environment Variables
-
-| Variable | Description | Required |
-|---|---|---|
-| `GROQ_API_KEY` | Groq API key for LLM | ✓ |
-| `ADZUNA_APP_ID` | Adzuna application ID | ✓ |
-| `ADZUNA_APP_KEY` | Adzuna application key | ✓ |
-| `SUPABASE_URL` | Supabase project URL | ✓ |
-| `SUPABASE_ANON_KEY` | Supabase anon public key | ✓ |
-| `SUPABASE_SERVICE_KEY` | Supabase service role key (bypasses RLS) | ✓ |
-| `VITE_API_URL` | Backend API URL (frontend) | ✓ |
-
+- 
 ---
 
 ## Roadmap
@@ -276,7 +197,7 @@ Frontend runs at `http://localhost:5173`
 
 ## Built By
 
-**Charles** — AI Engineer & Full Stack Developer  
+**MikeTheEngrr** — AI Engineer & Full Stack Developer  
 [@MikeTheEngrr](https://x.com/MikeTheEngrr) · [GitHub](https://github.com/MikeTheEngr)
 
 ---
