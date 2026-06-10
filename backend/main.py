@@ -13,7 +13,10 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # restrict to your frontend domain in production
+    allow_origins=[
+        "http://localhost:5173",
+        "https://cv-intelligence.vercel.app",  # update with your actual Vercel URL
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
