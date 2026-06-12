@@ -40,8 +40,15 @@ export default function JobsPage({ jobResult, token, onCoverLetter }) {
 
       {subTab === "matched" && jobResult && (
         <>
-          <div style={{ fontSize: "13px", color: theme.textMuted, marginBottom: "16px" }}>
-            {jobResult.jobs.length} jobs · <span style={{ color: theme.accent, fontWeight: 600 }}>{jobResult.keywords_used}</span>
+          <div style={{ fontSize: "13px", color: theme.textMuted, marginBottom: "16px", display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+            <span>{jobResult.jobs.length} jobs matched · <span style={{ color: theme.accent, fontWeight: 600 }}>{jobResult.keywords_used}</span></span>
+            <div style={{ display: "flex", gap: "6px" }}>
+              {["Adzuna", "JSearch", "Remotive", "LinkedIn", "Indeed", "Glassdoor"].map((src) => {
+                const count = jobResult.jobs.filter(j => j.source === src).length;
+                if (!count) return null;
+                return <span key={src} style={{ fontSize: "11px", fontWeight: 600, color: theme.accentPurple, background: "rgba(123,47,255,0.1)", padding: "2px 8px", borderRadius: "6px", border: "1px solid rgba(123,47,255,0.2)" }}>{src} {count}</span>;
+              })}
+            </div>
           </div>
           {jobResult.jobs.length === 0
             ? <div style={{ textAlign: "center", padding: "48px 0", color: theme.textMuted }}>No jobs found. Try a different country.</div>

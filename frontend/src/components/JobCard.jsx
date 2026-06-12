@@ -43,8 +43,13 @@ export default function JobCard({ job, token, onCoverLetter }) {
           <span style={{ fontWeight: 600, color: theme.textMuted }}>{job.company}</span>
           <span style={{ margin: "0 8px", opacity: 0.4 }}>·</span>
           {job.location}
+          {job.source && (
+            <span style={{ marginLeft: "10px", fontSize: "11px", fontWeight: 600, color: theme.accentPurple, background: "rgba(123,47,255,0.1)", padding: "2px 8px", borderRadius: "6px", border: "1px solid rgba(123,47,255,0.2)" }}>
+              {job.source}
+            </span>
+          )}
           {job.salary_min && (
-            <span style={{ marginLeft: "12px", color: theme.success, fontWeight: 600, fontSize: "12px", background: "rgba(0,255,163,0.08)", padding: "2px 10px", borderRadius: "20px", border: "1px solid rgba(0,255,163,0.2)" }}>
+            <span style={{ marginLeft: "8px", color: theme.success, fontWeight: 600, fontSize: "12px", background: "rgba(0,255,163,0.08)", padding: "2px 10px", borderRadius: "20px", border: "1px solid rgba(0,255,163,0.2)" }}>
               ${(job.salary_min / 1000).toFixed(0)}k–${(job.salary_max / 1000).toFixed(0)}k
             </span>
           )}
